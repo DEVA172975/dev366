@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PORTFOLIO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .box1, .box2 {
+            width: 800px;
+            height: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            border-radius: 25px;
+        }
+
+        .box1 {
+            background-color: rgb(236, 228, 231);
+            border: 2px solid rgb(230, 211, 211);
+        }
+
+        .box2 {
+            background-color: rgb(250, 239, 243);
+            border: 2px solid rgb(182, 128, 128);
+        }
+
+        .photo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .photo img {
+            width: 300px;
+            height: 300px;
+            border-radius: 200px;
+            margin-bottom: 10px;
+            border: 2px solid black;
+        }
+
+        .info, .info3 {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-style: italic;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bio {
+            margin: 50px auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(10, 8, 9);
+            border: 2px solid rgb(27, 24, 24);
+            border-radius: 25px;
+            color: rgb(20, 17, 17);
+        }
+
+        .footer {
+            color: aliceblue;
+            margin-top: 20px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body onload="welcomeMessage()">
+    <div class="bio">
+        <b>BIO-DATA</b>
+
+        <div class="box1">
+            <div class="photo">
+                <img src="C:\Users\digital library\Desktop\c0d625a7ef5bc800380b76186f4f1e06.jpg" alt="LEO">
+            </div>
+            <div class="info">
+                <div>NAME: S.K.DEVANAND</div>
+                <div>COURSE: B.E ECE</div>
+                <div>EXPERT IN: Embedded system engineer</div>
+            </div>
+        </div>
+
+        <div class="box2">
+            <div class="info3">
+                <div>ABOUT: Cross domain thinker. Good at Multitasking. Embedded system enthusiast</div>
+                <div>
+                   <div>Linkedin: <button onclick="showLinkedIn()">Show LinkedIn ID</button> <div id="linkedin" class="hidden"></div> 
+                   </div>
+                </div>
+                <div>
+                   <div>Github: <button onclick="showGitHub()">Show GitHub ID</button><div id="github" class="hidden">https://github.com/devanand9543</div>
+                    </div>
+                </div>
+                <div>SKILLS: Expert in Cadence, Blender, Multisim, Embedded system container designer</div>
+                <button onclick="toggleTheme()">Toggle Dark/Light Mode</button>
+            </div>
+        </div>
+
+        <div class="footer">@devanandsanjay9543@gmail.com</div>
+    </div>
+
+    <script>
+        function welcomeMessage() {
+            alert("Welcome to S.K. Devanand's Portfolio!");
+        }
+
+        function showLinkedIn() {
+            document.getElementById("linkedin").classList.toggle("hidden");
+        }
+
+        function showGitHub() {
+            document.getElementById("github").classList.toggle("hidden");
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            if (body.style.backgroundColor === "black") {
+                body.style.backgroundColor = "white";
+                body.style.color = "black";
+            } else {
+                body.style.backgroundColor = "black";
+                body.style.color = "white";
+            }
+        }
+    </script>
+</body>
+</html> 
