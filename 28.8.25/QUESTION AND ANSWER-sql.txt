@@ -1,0 +1,111 @@
+
+1. Departments with average salary > 100000
+
+CREATE DATABASE Q1_Departments;
+USE Q1_Departments;
+
+CREATE TABLE Employees (
+    EmpID INT PRIMARY KEY,
+    EmpName VARCHAR(50),
+    Department VARCHAR(50),
+    Salary INT
+);
+
+INSERT INTO Employees VALUES
+(1, 'Alice', 'HR', 120000),
+(2, 'Bob', 'HR', 80000),
+(3, 'Charlie', 'IT', 150000),
+(4, 'David', 'IT', 160000),
+(5, 'Eve', 'Finance', 95000);
+
+
+SELECT Department, AVG(Salary) AS Avg_Salary
+FROM Employees
+GROUP BY Department
+HAVING AVG(Salary) > 100000;
+
+
+
+
+2. Departments where max salary = 500000
+
+CREATE DATABASE Q2_Departments;
+USE Q2_Departments;
+
+CREATE TABLE Employees (
+    EmpID INT PRIMARY KEY,
+    EmpName VARCHAR(50),
+    Department VARCHAR(50),
+    Salary INT
+);
+
+INSERT INTO Employees VALUES
+(1, 'John', 'Sales', 500000),
+(2, 'Jane', 'Sales', 300000),
+(3, 'Rick', 'Marketing', 450000),
+(4, 'Morty', 'Finance', 500000),
+(5, 'Elon', 'Finance', 400000);
+
+Query
+SELECT Department, MAX(Salary) AS Max_Salary
+FROM Employees
+GROUP BY Department
+HAVING MAX(Salary) = 500000;
+
+
+
+
+3. Departments with more than 1 employee AND total salary > 100000
+
+CREATE DATABASE Q3_Departments;
+USE Q3_Departments;
+
+CREATE TABLE Employees (
+    EmpID INT PRIMARY KEY,
+    EmpName VARCHAR(50),
+    Department VARCHAR(50),
+    Salary INT
+);
+
+INSERT INTO Employees VALUES
+(1, 'Sam', 'R&D', 70000),
+(2, 'Max', 'R&D', 60000),
+(3, 'Leo', 'Support', 40000),
+(4, 'Nina', 'Support', 35000),
+(5, 'Kate', 'Support', 30000),
+(6, 'Tom', 'Admin', 90000);
+
+Query
+SELECT Department, COUNT(*) AS Employee_Count, SUM(Salary) AS Total_Salary
+FROM Employees
+GROUP BY Department
+HAVING COUNT(*) > 1 AND SUM(Salary) > 100000;
+
+
+
+
+4. Departments with average salary between 50000 and 200000
+
+CREATE DATABASE Q4_Departments;
+USE Q4_Departments;
+
+CREATE TABLE Employees (
+    EmpID INT PRIMARY KEY,
+    EmpName VARCHAR(50),
+    Department VARCHAR(50),
+    Salary INT
+);
+
+INSERT INTO Employees VALUES
+(1, 'Harry', 'Tech', 180000),
+(2, 'Ron', 'Tech', 150000),
+(3, 'Hermione', 'Research', 120000),
+(4, 'Draco', 'Research', 80000),
+(5, 'Luna', 'Support', 40000),
+(6, 'Neville', 'Support', 60000);
+
+Query
+SELECT Department, AVG(Salary) AS Avg_Salary
+FROM Employees
+GROUP BY Department
+HAVING AVG(Salary) BETWEEN 50000 AND 200000;
