@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Validation Demo</title>
+
+    <style>
+        /* Basic Input Styling */
+        input {
+            padding: 8px;
+            margin-top: 5px;
+            width: 250px;
+            box-sizing: border-box;
+        }
+
+        /* Styling for invalid fields that have been focused/changed */
+        input:invalid:focus,
+        input:invalid.valid {
+            border: 1px solid #ccc; /* Default border color */
+        }
+
+        /* Red border for invalid touched fields */
+        input:invalid:focus {
+            border-color: #FF0000;
+            box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+        }
+    </style>
+
+</head>
+<body>
+
+<form action="#" method="POST">
+    <h2>User Login</h2>
+
+    <label for="username">Username (Min 6 chars):</label>
+    <input type="text" id="username" name="username" minlength="6" required><br><br>
+
+    <label for="password">Password (*Required):</label>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <button type="submit">Log In</button>
+</form>
+
+</body>
+</html>
